@@ -1,10 +1,10 @@
 "use strict";
 
-class UesrStorage {
+class UserStorage {
   static #users = {
-    id: ["aaa"],
-    pw: ["1111"],
-    name: ["sjkim"],
+    id: ["aaa", "bbb", "ccc"],
+    pw: ["1111", "2222", "3333"],
+    name: ["admin", "admin2", "admin3"],
   };
 
   static getUsers(...fields) {
@@ -17,6 +17,16 @@ class UesrStorage {
     }, {});
     return newUsers;
   }
+
+  static getUserInfo(id) {
+    const users = this.#users;
+    const idx = users.id.indexOf(id);
+    const userInfo = Object.keys(users).reduce((newUsers, info) => {
+      newUsers[info] = users[info][idx];
+      return newUsers;
+    }, {});
+    return userInfo;
+  }
 }
 
-module.exports = UesrStorage;
+module.exports = UserStorage;
