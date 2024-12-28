@@ -30,6 +30,6 @@ function login() {
           alert(res.msg);
         }
       })
-      .catch((err) => console.error(new Error("로그인 중 에러 발생")))
+      .catch((err) => console.error("로그인 중 에러 발생"))
   );
 }
