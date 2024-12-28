@@ -86,6 +86,22 @@
         border: 1px solid #fff;
         background-color: #fff;
       }
+      .login-box .message {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+        align-items: center;
+        gap: 8px;
+        color: #d4d4d4;
+        font-size: 12px;
+      }
+      .login-box .message a {
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: unset;
+        margin: unset;
+        padding: unset;
+      }
     </style>
     <title>Document</title>
   </head>
@@ -102,7 +118,10 @@
           <label>Password</label>
         </div>
         <div class="login-btn">
-          <button>로그인</button>
+          <button>Sign In</button>
+        </div>
+        <div class="message">
+          Not registered? <a href="/register">Create an account</a>
         </div>
       </form>
     </div>
