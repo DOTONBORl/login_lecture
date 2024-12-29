@@ -8,15 +8,22 @@ class User {
   }
 
   login() {
-    const { id, pw } = UserStorage.getUserInfo(this.body.id);
+    const client = this.body;
+    const { id, pw } = UserStorage.getUserInfo(client.id);
     // console.log(id, pw);
     if (id) {
-      if (id === this.body.id && pw === this.body.pw) {
+      if (id === client.id && pw === client.pw) {
         return { success: true };
       }
       return { success: false, msg: "비밀번호가 틀렸습니다." };
     }
     return { success: false, msg: "존재하지 않은 아이디입니다." };
+  }
+
+  register() {
+    const client = this.body;
+    const response = UserStorage.save(client);
+    return response;
   }
 }
 module.exports = User;

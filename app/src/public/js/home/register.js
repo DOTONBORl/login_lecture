@@ -10,12 +10,14 @@ const id = document.querySelector("#id"),
 
 registerBtn.addEventListener("click", register);
 function register() {
-  // 로그인 버튼 클릭 시 id value와 pw value를 가져온다
+  if (!id.value) return alert("아이디를 입력해주세요.");
+  if (pw !== checkPw) return alert("비밀번호가 일치하지 않습니다.");
+
   const req = {
     id: id.value,
     name: name.value,
     pw: pw.value,
-    checkPw: checkPw.value,
+    // checkPw: checkPw.value,
   };
 
   fetch("/register", {
