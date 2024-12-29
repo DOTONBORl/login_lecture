@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/js/home/login.js" defer></script>
+    <script src="/js/home/register.js" defer></script>
     <style>
       html {
         height: 100%;
@@ -78,13 +78,20 @@
       }
 
       .login-box .login-btn {
-        text-align: right;
+        display: flex;
+        justify-content: right;
       }
-      .login-box button {
+      .login-box #button {
         padding: 8px 16px;
         border-radius: 4px;
         border: 1px solid #fff;
         background-color: #fff;
+        width: max-content;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-use-select: none;
+        user-select: none;
       }
       .login-box .message {
         display: flex;
@@ -126,7 +133,7 @@
           <label>Check the Password</label>
         </div>
         <div class="login-btn">
-          <button>Sign Up</button>
+          <p id="button">Sign Up</p>
         </div>
         <div class="message">
           Already registered? <a href="/login">Login</a>
